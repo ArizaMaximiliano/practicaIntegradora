@@ -1,11 +1,12 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-export const init = async () => {
-    try {
-        const URI = 'mongodb://localhost:27017/';
-        await mongoose.connect(URI);
-        console.log('Database conectada');
-    } catch(error){
-        console.log('Ocurrio un error al intetar conectarse a la DB', error.message);
-    }
+export const URI = 'mongodb+srv://maximilianoariza01:ColXbla70bqiVlAm@cluster0.kjntekc.mongodb.net/ecommercePI';
+
+export const initDB = async () => {
+  try {
+    await mongoose.connect(URI);
+    console.log('Conexion exitosa con la base de datos');
+  } catch (error) {
+    console.error('Error al conectar con la base de datos:', error.message);
+  }
 }
